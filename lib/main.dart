@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sampark_web/Config/Themes.dart';
-import 'package:sampark_web/Pages/HomePage.dart';
+import 'package:sampark_web/View/HomePageView.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +16,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: lightTheme,
       darkTheme: darkTheme,
-      home: HomePage(),
+      themeMode: ThemeMode.dark,
+      home: HomePageView(),
     );
   }
 }
