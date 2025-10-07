@@ -18,7 +18,7 @@ class MainInfo extends StatelessWidget {
                 Text(
                   "SAMPARK",
                   style: TextStyle(
-                    fontSize: 40,
+                    fontSize: 50,
                     fontWeight: FontWeight.bold,
                     color: Theme.of(context).colorScheme.onSurface,
                   ),
@@ -43,7 +43,7 @@ class MainInfo extends StatelessWidget {
                 Text(
                   "App Version 1.0.0",
                   style: TextStyle(
-                    fontSize: 12,
+                    fontSize: 15,
                     fontWeight: FontWeight.w200,
                     color: Color(0xFF4CAF50),
                   ),
