@@ -4,7 +4,7 @@
 
 Modern Flutter landing site for the Sampark Android app with responsive web UI, feature highlights, and direct APK downloads via GitHub Releases.
 
-[![Flutter](https://img.shields.io/badge/Flutter-3.x-blue?logo=flutter)](https://flutter.dev) [![Dart](https://img.shields.io/badge/Dart-3.x-0175C2?logo=dart)](https://dart.dev) [![GetX](https://img.shields.io/badge/State%20Mgmt-GetX-8A2BE2)](https://pub.dev/packages/get) [![License](https://img.shields.io/badge/license-UNLICENSED-lightgrey)](#license) [![Stars](https://img.shields.io/github/stars/dd-18/sampark_web?style=social)](https://github.com/dd-18/sampark_web) [![Issues](https://img.shields.io/github/issues/dd-18/sampark_web)](https://github.com/dd-18/sampark_web/issues)
+[![Flutter](https://img.shields.io/badge/Flutter-3.x-blue?logo=flutter)](https://flutter.dev) [![Dart](https://img.shields.io/badge/Dart-3.x-0175C2?logo=dart)](https://dart.dev) [![GetX](https://img.shields.io/badge/State%20Mgmt-GetX-8A2BE2)](https://pub.dev/packages/get) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) [![Stars](https://img.shields.io/github/stars/dd-18/sampark_web?style=social)](https://github.com/dd-18/sampark_web) [![Issues](https://img.shields.io/github/issues/dd-18/sampark_web)](https://github.com/dd-18/sampark_web/issues)
 
 </div>
 
@@ -155,7 +155,7 @@ No runtime secrets are required. All calls are public GitHub APIs. Ensure assets
 ---
 
 ## License
-No license file found in this repository. If you intend to make it open source, consider adding a license (e.g., MIT). Until then, assume all rights reserved.
+This project is licensed under the MIT License — see [`LICENSE`](LICENSE) for details.
 
 ---
 
