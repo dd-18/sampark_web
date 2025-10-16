@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+import '../Controller/AppController.dart';
 
 class MainInfo extends StatelessWidget {
   const MainInfo({super.key});
 
   @override
   Widget build(BuildContext context) {
+    AppController appController = Get.put(AppController());
     final w = MediaQuery.of(context).size.width;
     final h = MediaQuery.of(context).size.height;
     return Row(
@@ -24,15 +28,7 @@ class MainInfo extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  "Best app for connect with",
-                  style: TextStyle(
-                    fontSize: 40,
-                    fontWeight: FontWeight.bold,
-                    color: Theme.of(context).colorScheme.onSurface,
-                  ),
-                ),
-                Text(
-                  "your friends and family",
+                  "Connect. Communicate. Collaborate.",
                   style: TextStyle(
                     fontSize: 40,
                     fontWeight: FontWeight.bold,
@@ -40,19 +36,37 @@ class MainInfo extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 10),
-                Text(
-                  "App Version 1.0.0",
-                  style: TextStyle(
-                    fontSize: 15,
-                    fontWeight: FontWeight.w200,
-                    color: Color(0xFF4CAF50),
+                Obx(
+                  () => Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      if (appController.oldVersion.value == '') ...[
+                        SizedBox(
+                          height: 14,
+                          width: 14,
+                          child: CircularProgressIndicator(
+                            strokeWidth: 2,
+                            valueColor: AlwaysStoppedAnimation<Color>(Color(0xFF4CAF50)),
+                          ),
+                        ),
+                        SizedBox(width: 8),
+                      ],
+                      Text(
+                        "App Version ${appController.oldVersion.value == '' ? 'Loading' : appController.oldVersion.value}",
+                        style: TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.w200,
+                          color: Color(0xFF4CAF50),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
                 SizedBox(height: 10),
                 SizedBox(
-                  height: 200,
+                  height: 100,
                   child: Text(
-                    "You can track all your transaction expenses and incomes with the helping of this app, this app is spacialy made for student and a large group of member management",
+                    "A fast, modern way to stay close to the people who matter. Enjoy reliable messaging, beautifully crafted group chats, and crystal‑clear calls — all in a thoughtful, privacy‑minded experience.",
                     style: TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.w400,
@@ -62,36 +76,40 @@ class MainInfo extends StatelessWidget {
                 ),
                 Row(
                   children: [
-                    Container(
-                      padding: EdgeInsets.symmetric(
-                        horizontal: 25,
-                        vertical: 15,
-                      ),
-                      margin: EdgeInsets.only(right: 20),
-                      decoration: BoxDecoration(
-                        color: Theme.of(context).colorScheme.primary,
-                        borderRadius: BorderRadius.circular(20),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.black.withOpacity(0.1),
-                            blurRadius: 10,
-                            offset: Offset(0, 5),
-                          ),
-                        ],
-                      ),
-                      child: Row(
-                        children: [
-                          Icon(Icons.android, size: 40, color: Colors.green),
-                          SizedBox(width: 15),
-                          Text(
-                            "Download Now",
-                            style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.w400,
-                              color: Colors.white,
+                    InkWell(
+                      onTap: () {
+                        appController.downloadApk();
+                      },
+                      child: Container(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 25,
+                          vertical: 15,
+                        ),
+                        decoration: BoxDecoration(
+                          color: Theme.of(context).colorScheme.primary,
+                          borderRadius: BorderRadius.circular(20),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.black,
+                              blurRadius: 10,
+                              offset: Offset(0, 5),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
+                        child: Row(
+                          children: [
+                            Icon(Icons.android, size: 36, color: Colors.white),
+                            SizedBox(width: 15),
+                            Text(
+                              "Download for Android",
+                              style: TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.w400,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ],
@@ -106,6 +124,7 @@ class MainInfo extends StatelessWidget {
           decoration: BoxDecoration(
             color: Theme.of(context).colorScheme.primary,
             shape: BoxShape.circle,
+            image: DecorationImage(image: AssetImage('assets/images/main.png')),
           ),
         ),
       ],

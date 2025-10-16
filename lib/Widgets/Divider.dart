@@ -6,15 +6,29 @@ class MyDivider extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final w = MediaQuery.of(context).size.width;
+    final scheme = Theme.of(context).colorScheme;
+    final width = (w * 0.22).clamp(120, 220).toDouble();
+
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Container(
-          width: w / 3,
-          height: 5,
+          width: width,
+          height: 4,
           decoration: BoxDecoration(
-            color: Colors.orange,
-            borderRadius: BorderRadius.circular(10),
+            borderRadius: BorderRadius.circular(999),
+            gradient: LinearGradient(
+              colors: [scheme.primary, scheme.primaryContainer],
+              begin: Alignment.centerLeft,
+              end: Alignment.centerRight,
+            ),
+            boxShadow: [
+              BoxShadow(
+                color: scheme.primary.withOpacity(0.35),
+                blurRadius: 12,
+                offset: const Offset(0, 4),
+              ),
+            ],
           ),
         ),
       ],

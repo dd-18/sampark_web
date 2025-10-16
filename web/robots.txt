@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dd-18.github.io/sampark_web/sitemap.xml
+
+
