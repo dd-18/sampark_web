@@ -274,7 +274,7 @@ class MobileHomePage extends StatelessWidget {
               children: [
                 Flexible(
                   child: Text(
-                    "Made with ❤️ by Devang Dhameliya © 2024",
+                    "Made with ❤️ by Devang Dhameliya © 2025",
                     style: GoogleFonts.roboto(fontSize: 12, color: Colors.grey),
                   ),
                 ),
